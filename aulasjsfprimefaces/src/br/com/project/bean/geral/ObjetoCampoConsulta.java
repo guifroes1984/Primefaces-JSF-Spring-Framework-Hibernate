@@ -1,4 +1,4 @@
-package br.com.project.geral;
+package br.com.project.bean.geral;
 
 import java.io.Serializable;
 import java.util.Comparator;

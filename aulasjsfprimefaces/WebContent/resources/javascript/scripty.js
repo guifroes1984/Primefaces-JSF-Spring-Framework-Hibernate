@@ -46,3 +46,9 @@ function fecharMenupop() {
 	  	$('#menupop').hide('slow');
 	 }
 }
+
+function redirecionarPagina(context, pagina) { 
+	pagina = pagina + ".jsf";
+	document.location = context + pagina;
+}
+

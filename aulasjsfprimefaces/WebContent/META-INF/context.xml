@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context reloadable="true">
 	<Resource	
-				name="jdbc/datasource" 
+				name="jdbc/datasouce" 
 				auth="Container" 
 				type="javax.sql.DataSource"
 				defaultAutoCommit='false'
@@ -19,8 +19,8 @@
 				antiJARLocking="false"
                 antiResourceLocking="false"
 				username="caixaki" 
-				password="admin" 
-				url="jdbc:postgresql://localhost:5433/ebook_db?autoReconnect=true"/>
+				password="postgres1985" 
+				url="jdbc:postgresql://localhost:5432/caixaki?autoReconnect=true"/>
 <!-- Classe do tomcat que está lendo esse arquivo é org.apache.tomcat.dbcp.dbcp.PoolingDataSource -->				
 <!-- POOL DE CONEXÕES -->
 <!-- https://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html -->

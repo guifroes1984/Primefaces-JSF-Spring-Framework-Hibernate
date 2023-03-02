@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.framework.hibernate.session.HibernateUtil;
 import br.com.framework.interfac.crud.InterfaceCrud;
+import br.com.project.model.classes.Entidade;
 
 @SuppressWarnings({ "unchecked" })
 @Component
@@ -210,8 +211,8 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 
 	}
 
-	public T findUninqueByProperty(Class<T> entidade, Object valor,
-			String atributo) throws Exception {
+	public T findUninqueByProperty(Class<T> entidade, 
+			Object valor, String atributo) throws Exception {
 		validaSessionFactory();
 		StringBuilder query = new StringBuilder();
 

@@ -31,6 +31,9 @@
 		<h:body>
 			<script type="text/javascript" charset="UTF-8">
 				$.noConflict();
+				localeData_pt_br();
+				initTamplete();
+				ocultarMenu();
 				
 				$(document).keydown(function(e) {
 					if (e.which == 116) {
@@ -129,12 +132,12 @@
 				Corpo					
 			</p:dialog>
 			
-			<script>
-				$('#menupop').hide('slow');
-			</script>
 		</h:body>
 	</h:form>
 	
+	<script type="text/javascript" charset="UTF-8">
+		carregarIdElementosPagina();
+	</script>
+	
 </sec:isAuthenticated>
-
 </html>

@@ -61,58 +61,8 @@
 								 {PreviousPageLink} {PageLinks} 
 	 							 {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
 
-			<p:column style="width:50px;">
-				<center>
-					<f:facet name="header">Código</f:facet>
-					<h:outputText value="#{objeto.cid_codigo}" />
-				</center>
-			</p:column>
-
-			<p:column>
-				<center>
-					<f:facet name="header">Cidade</f:facet>
-					<h:outputText value="#{objeto.cid_descricao}" />
-				</center>
-			</p:column>
-
-			<p:column style="width:400px;">
-				<center>
-					<f:facet name="header">Estado</f:facet>
-					<h:outputText value="#{objeto.estado.est_nome}" />
-				</center>
-			</p:column>
-			
-			<p:column style="width:50px;">
-				<center>
-					<f:facet name="header">Excluir</f:facet>
-					<p:commandLink action="#{cidadeBeanView.excluir}" update="tableResult" 
-						id="excluirCidade" ajax="true" immediate="true"
-						onclick="if(!confirm('Confirma a exclusão da cidade : #{objeto.cid_descricao}?')) return false;">
-						<h:graphicImage library="img" name="excluir16.png"/>
-						<f:setPropertyActionListener
-							target="#{cidadeBeanView.objetoSelecionado}" value="#{objeto}" />
-					</p:commandLink>
-				</center>
-			</p:column>
-		
-		<sec:ifAnyGranted roles="CIDADE_EDITAR, ADMIN">
-				<p:column style="width:50px;">
-					<center>
-						<f:facet name="header">Editar</f:facet>
-						<p:commandLink action="#{cidadeBeanView.editar}"
-							update="@form:formCadastro" ajax="true" immediate="true" 
-							oncomplete="addFocoAoCampo('cidadeNome');">
-							
-							<h:graphicImage library="img" name="editar16.png"/>
-							<f:setPropertyActionListener
-								target="#{cidadeBeanView.objetoSelecionado}" value="#{objeto}" />
-						</p:commandLink>
-					</center>
-				</p:column>
-		</sec:ifAnyGranted>
-
+			<ui:include src="/resources/components/colunasDataTableCidade.xhtml"/>
 		</p:dataTable>
-
 	</ui:define>
 	</ui:composition>
 

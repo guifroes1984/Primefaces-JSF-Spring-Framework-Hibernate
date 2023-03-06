@@ -13,8 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.com.framework.interfac.crud.InterfaceCrud;
 import br.com.project.bean.geral.BeanManagedViewAbstract;
-import br.com.project.geral.controller.SessionControllerImpl;
+import br.com.project.geral.controller.SessionController;
 import br.com.srv.interfaces.SrvLogin;
 
 @Controller
@@ -28,7 +29,7 @@ public class LoginBeanView extends BeanManagedViewAbstract {
 	private String password;
 
 	@Resource
-	private SessionControllerImpl sessionController;
+	private SessionController sessionController;
 
 	@Resource
 	private SrvLogin srvLogin;
@@ -85,6 +86,16 @@ public class LoginBeanView extends BeanManagedViewAbstract {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Override
+	protected Class<?> getClassImplement() {
+		return null;
+	}
+
+	@Override
+	protected InterfaceCrud<?> getController() {
+		return null;
 	}
 
 }
